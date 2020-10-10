@@ -1,0 +1,37 @@
+<div class="test-details-box-wrapper">
+    <a class="back-to-list-btn" routerLink="/">&larr; Back to skills list</a>
+    <div class="test-details-box" *ngIf="skillTest">
+        <div class="header flex-center">
+            <h2 class="name">{{skillTest.name}}</h2>
+            <button class="close-btn" routerLink="/">X</button>
+        </div>
+        <div class="body flex-center">
+            <ul class="detail-item-row">
+                <li>
+                    <label>Total Questions:</label>
+                    <span>{{skillTest.totalQuestions}}</span>
+                </li>
+                <li>
+                    <label>Total Time:</label>
+                    <span>{{skillTest.displayTime}}</span>
+                </li>
+                <li *ngIf="skillTest.note">
+                    <i>Note: {{skillTest.note}}</i>
+                </li>
+                <li *ngIf="skillTest.description">
+                    <p>{{skillTest.description}}</p>
+                </li>
+            </ul>
+            <div class="topics-wrapper" *ngIf="skillTest.topics.length">
+                <h3>Topics</h3>
+                <ul class="topics">
+                    <li *ngFor="let topic of skillTest.topics">{{topic}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <button class="tys-btn test-camera-btn">Test your Camera</button>
+            <button class="tys-btn start-btn">Start Test</button>
+        </div>
+    </div>
+</div>

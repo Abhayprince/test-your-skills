@@ -1,0 +1,52 @@
+.test-details-box-wrapper {
+  padding: 15px;
+}
+.test-details-box {
+  background-color: #ffffff;
+  padding: 15px;
+}
+.test-details-box > .header {
+  position: relative;
+}
+.close-btn {
+  background-color: #df2a48;
+  font-size: 18px;
+  border: none;
+  color: #fff;
+  height: 32px;
+  width: 32px;
+  line-height: 35px;
+  border-radius: 50%;
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  box-shadow: 0 5px 10px #000;
+  cursor: pointer;
+}
+.close-btn:hover {
+  box-shadow: 0 1px 15px #000;
+  background-color: #b61631;
+}
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer {
+  margin-top: 50px;
+}
+.start-btn {
+  margin-left: 100px;
+}
+.topics {
+  font-size: 14px;
+}
+.topics > li {
+  margin-top: 5px;
+}
+.detail-item-row {
+  margin-top: 15px;
+}
+.detail-item-row > li {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,6 @@
+<div class="skill-box">
+    <label class="skill-test-name">{{ skillTest.name }}</label>
+    <span class="skill-stat-count-row">{{skillTest.totalQuestions}} Questions</span>
+    <span class="skill-stat-count-row">{{skillTest.displayTime}}</span>
+    <button class="know-more-btn tys-btn" [routerLink]="['/details',skillTest.id]">Know more</button>
+</div>
