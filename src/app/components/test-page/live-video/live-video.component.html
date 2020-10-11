@@ -1,1 +1,32 @@
-<p>live-video works!</p>
+<div class="live-video-wrapper m-t-15 p-15 bgc-white">
+    <div class="errors-container">
+        <h4 *ngIf="errors.length > 0">Messages:</h4>
+        <ul class="errors-list" *ngFor="let error of errors">
+            <li>{{error | json}}</li>
+        </ul>
+    </div>
+    <div class="webcam-snapshots-container d-flex f-wrap">
+        <div class="webcam f-1">
+            <div class="f-group m-b-10">
+                <label for="webcams-list" class="webcams-list">Webcams :</label>
+                <select class="webcams-list" id="webcams-list" [(ngModel)]="deviceId"
+                    (change)="showNextWebcam(deviceId);">
+                    <option *ngFor="let cam of webCamsList" value="{{cam.deviceId}}">{{cam.label}}</option>
+                </select>
+            </div>
+
+            <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+                [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
+                (initError)="handleInitError($event)"></webcam>
+            <div class="btns-container flex-center f-wrap">
+                <button class="tys-btn" (click)="triggerSnapshot();">Take A Snapshot</button>
+                <button class="tys-btn" (click)="toggleWebcam();">{{showWebcam ? 'Off':'On'}} Webcam</button>
+            </div>
+        </div>
+        <div class="snapshots f-1" *ngIf="webcamImages.length">
+            <img *ngFor="let image of  webcamImages" [src]="image.imageAsDataUrl" />
+        </div>
+        <div *ngIf="!webcamImages.length" class="empty-container f-1">&nbsp;</div>
+    </div>
+</div>

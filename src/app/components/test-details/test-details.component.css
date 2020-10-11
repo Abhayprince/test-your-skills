@@ -27,11 +27,7 @@
   box-shadow: 0 1px 15px #000;
   background-color: #b61631;
 }
-.flex-center {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .footer {
   margin-top: 50px;
 }

@@ -5,7 +5,7 @@
             <h2 class="name">{{skillTest.name}}</h2>
             <button class="close-btn" routerLink="/">X</button>
         </div>
-        <div class="body flex-center">
+        <div class="body flex-center f-wrap">
             <ul class="detail-item-row">
                 <li>
                     <label>Total Questions:</label>
@@ -29,9 +29,11 @@
                 </ul>
             </div>
         </div>
-        <div class="footer">
-            <button class="tys-btn test-camera-btn">Test your Camera</button>
+        <div class="footer f-wrap">
+            <button class="tys-btn test-camera-btn" (click)="toggleCameraTest = !toggleCameraTest">Test your
+                Camera</button>
             <button class="tys-btn start-btn">Start Test</button>
         </div>
     </div>
+    <app-live-video *ngIf="toggleCameraTest"></app-live-video>
 </div>

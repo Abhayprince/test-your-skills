@@ -10,7 +10,7 @@ import { SkillTest } from "../../core/models/skill-test.model";
 })
 export class TestDetailsComponent implements OnInit {
   @Input("skillTest") skillTest: SkillTest;
-
+  toggleCameraTest = false;
   constructor(
     private route: ActivatedRoute,
     private skillService: SkillTestService,

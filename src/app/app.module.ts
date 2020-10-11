@@ -12,6 +12,8 @@ import { OptionsComponent } from "./components/test-page/options/options.compone
 import { TimerComponent } from "./components/test-page/timer/timer.component";
 import { QuestionNumbersListComponent } from "./components/test-page/question-numbers-list/question-numbers-list.component";
 import { LiveVideoComponent } from "./components/test-page/live-video/live-video.component";
+import { WebcamModule } from "ngx-webcam";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { LiveVideoComponent } from "./components/test-page/live-video/live-video
     QuestionNumbersListComponent,
     LiveVideoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, WebcamModule],
   providers: [],
   bootstrap: [AppComponent],
 })

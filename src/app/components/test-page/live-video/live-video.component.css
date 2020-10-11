@@ -1,0 +1,21 @@
+.snapshots > img {
+  max-width: 150px;
+  max-height: 150px;
+  margin: 0 10px 10px;
+  object-fit: contain;
+}
+.live-video-wrapper {
+}
+.errors-container {
+  color: red;
+}
+.errors-list {
+  font-size: 14px;
+}
+.webcam {
+  text-align: center;
+}
+.webcams-list {
+  font-size: 16px;
+  cursor: pointer;
+}
