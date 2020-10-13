@@ -36,10 +36,12 @@ export class LiveVideoComponent implements OnInit {
     WebcamUtil.getAvailableVideoInputs().then(
       (mediaDevices: MediaDeviceInfo[]) => {
         console.log("mediaDevices", mediaDevices);
-        this.webCamsList = mediaDevices.map((d) => {
-          return { label: d.label, deviceId: d.deviceId };
+        this.webCamsList = mediaDevices.map((d, i) => {
+          const cameraName = d.label || "Cam " + ++i;
+          return { label: cameraName, deviceId: d.deviceId };
         });
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
+        this.deviceId = this.webCamsList[0].deviceId;
       }
     );
   }
