@@ -32,7 +32,8 @@
         <div class="footer f-wrap">
             <button class="tys-btn test-camera-btn" (click)="toggleCameraTest = !toggleCameraTest">Test your
                 Camera</button>
-            <button class="tys-btn start-btn">Start Test</button>
+            <button class="tys-btn start-btn" [routerLink]='["/test-page",skillTestId,"q",firstQuestionId]'>Start
+                Test</button>
         </div>
     </div>
     <app-live-video *ngIf="toggleCameraTest"></app-live-video>

@@ -19,6 +19,10 @@ const routes: Routes = [
     component: TestPageLayoutComponent,
   },
   {
+    path: "test-page/:skillTestId",
+    component: TestPageLayoutComponent,
+  },
+  {
     path: "**",
     redirectTo: "/",
   },

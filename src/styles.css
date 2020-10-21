@@ -39,6 +39,12 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.w-100 {
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
 .d-flex {
   display: flex;
 }
@@ -81,7 +87,9 @@ body {
 .f-12 {
   flex: 12;
 }
-
+.m-5 {
+  margin: 5px;
+}
 .m-10 {
   margin: 10px;
 }
@@ -118,6 +126,9 @@ body {
 .m-b-15 {
   margin-bottom: 15px;
 }
+.p-5 {
+  padding: 5px;
+}
 .p-10 {
   padding: 10px;
 }
@@ -153,4 +164,22 @@ body {
 }
 .fs-15 {
   font-size: 15px;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.c-pointer {
+  cursor: pointer;
+}
+.tran-2s {
+  transition: ease all 0.2s;
+}
+.tran-3s {
+  transition: ease all 0.3s;
+}
+.b-rad-5 {
+  border-radius: 5px;
+}
+.b-circle {
+  border-radius: 50%;
 }

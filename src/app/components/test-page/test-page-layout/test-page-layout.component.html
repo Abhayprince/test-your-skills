@@ -1,1 +1,14 @@
-<p>test-page-layout works!</p>
+<div class="header d-flex flex-center p-15">
+    <h2>{{skillTest.name}}</h2>
+    <div class="header-right-box">
+        <app-timer [displayName]="skillTest.displayTime" [totalMinutes]="skillTest.totalTimeMinutes"
+            (timeOver)="onTimeOver()" [exitTestObservable]="exitTestEventSubject.asObservable()"></app-timer>
+        <button class="tys-btn m-l-10" (click)="onExitTest()">Exit Test</button>
+    </div>
+</div>
+
+<div class="d-flex f-wrap w-100">
+    <div class="question-number-box m-5 p-5 text-center c-pointer tran-2s b-rad-5"
+        *ngFor="let q of questions; let i =index;">
+        {{i+1}}</div>
+</div>

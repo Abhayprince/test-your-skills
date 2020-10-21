@@ -1,1 +1,3 @@
-<p>timer works!</p>
+<h2>Total time: {{displayTime}}</h2>
+<label>Time remaining: <span
+        [ngStyle]="{color: remainingSeconds <15 ? 'red': 'black', fontWeight: remainingSeconds <15 ? 'bold': 'normal'}">{{remainingDisplayTime}}</span></label>

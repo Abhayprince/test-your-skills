@@ -11,6 +11,8 @@ import { SkillTest } from "../../core/models/skill-test.model";
 export class TestDetailsComponent implements OnInit {
   @Input("skillTest") skillTest: SkillTest;
   toggleCameraTest = false;
+  skillTestId = 0;
+  firstQuestionId = 1;
   constructor(
     private route: ActivatedRoute,
     private skillService: SkillTestService,
@@ -18,9 +20,9 @@ export class TestDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const skillTestId = +this.route.snapshot.paramMap.get("skillTestId");
-    if (skillTestId) {
-      this.skillTest = this.skillService.getSkillById(skillTestId);
+    this.skillTestId = +this.route.snapshot.paramMap.get("skillTestId");
+    if (this.skillTestId) {
+      this.skillTest = this.skillService.getSkillById(this.skillTestId);
       if (!this.skillTest) return this.invalidLink();
     } else return this.invalidLink();
   }
