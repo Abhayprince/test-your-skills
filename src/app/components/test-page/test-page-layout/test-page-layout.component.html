@@ -1,14 +1,22 @@
 <div class="header d-flex flex-center p-15">
     <h2>{{skillTest.name}}</h2>
-    <div class="header-right-box">
+    <div class="header-right-box d-flex" style="align-items: flex-end;">
         <app-timer [displayName]="skillTest.displayTime" [totalMinutes]="skillTest.totalTimeMinutes"
             (timeOver)="onTimeOver()" [exitTestObservable]="exitTestEventSubject.asObservable()"></app-timer>
-        <button class="tys-btn m-l-10" (click)="onExitTest()">Exit Test</button>
+        <button class="tys-btn danger m-l-15 m-b-10" (click)="onExitTest()">Exit Test</button>
     </div>
 </div>
 
-<div class="d-flex f-wrap w-100">
-    <div class="question-number-box m-5 p-5 text-center c-pointer tran-2s b-rad-5"
-        *ngFor="let q of questions; let i =index;">
-        {{i+1}}</div>
+<hr>
+<div class="bgc-white m-y-15 p-15">
+    <app-question-numbers-list [questionTracker]="questionTracker" [skillTestId]="skillTestId"
+        (questionNumberClickEvent)="onQuestionNumberClick($event)"></app-question-numbers-list>
+
+    <app-question [currentQuestion]="currentQuestion" [currentQuestionOptions]="currentQuestionOptions"></app-question>
+
+    <hr>
+    <div class="d-flex flex-center p-15 m-15">
+        <button class="tys-btn" *ngIf="!isLastQuestion" (click)="onNextClickHandler()">Next Question</button>
+        <button class="tys-btn" (click)="onNextClickHandler()">Submit Test</button>
+    </div>
 </div>

@@ -1,1 +1,7 @@
-<p>question-numbers-list works!</p>
+<div class="d-flex f-wrap w-100">
+    <a class="question-number-box no-link m-5 p-5 text-center c-pointer tran-2s b-rad-5"
+        *ngFor="let q of questionTracker; let i =index;" [ngClass]="{disabled : q.isTouched}"
+        [attr.disabled]="q.isTouched" (click)="onQuestionNumberClick(q.questionId)">
+        {{q.questionId}}
+    </a>
+</div>

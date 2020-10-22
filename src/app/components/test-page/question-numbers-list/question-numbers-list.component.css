@@ -1,0 +1,14 @@
+.question-number-box {
+  background: chocolate;
+  width: 20px;
+  font-size: 12px;
+}
+.question-number-box:hover {
+  background: rgb(97, 46, 10);
+  color: #fff;
+}
+.question-number-box.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: darkgrey;
+}

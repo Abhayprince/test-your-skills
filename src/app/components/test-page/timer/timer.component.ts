@@ -34,7 +34,7 @@ export class TimerComponent implements OnInit, OnDestroy {
       this.finishTimer();
     });
     this.remainingSeconds = this.totalTimeInMinutes * 60;
-    this.remainingSeconds = 20;
+    //this.remainingSeconds = 20;
     this.interval = setInterval(() => {
       this.remainingDisplayTime = this.createDisplayTime(this.remainingSeconds);
       if (this.remainingSeconds === 0) {
@@ -55,7 +55,7 @@ export class TimerComponent implements OnInit, OnDestroy {
     this.timeOver.next();
   }
   private createDisplayTime(totalSeconds: number): string {
-    console.log("createDisplayTime: " + totalSeconds);
+    //console.log("createDisplayTime: " + totalSeconds);
     const h = Math.floor(totalSeconds / 3600).toString();
     const m = Math.floor((totalSeconds % 3600) / 60).toString();
     const s = Math.floor((totalSeconds % 3600) % 60).toString();

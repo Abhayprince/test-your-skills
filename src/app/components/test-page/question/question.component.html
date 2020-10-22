@@ -1,1 +1,15 @@
-<p>question works!</p>
+<div class="d-flex w-100">
+    <div class="f-1 p-15 ">
+        <h3>{{ currentQuestion.text }}</h3>
+    </div>
+    <div class="f-1 p-15">
+        <div class="option " *ngFor="let o of currentQuestionOptions">
+            <label class="option-label c-pointer m-y-10">
+                <input *ngIf="currentQuestion.answerType === AnswerType.Single" type="radio" name="q_option" />
+                <input *ngIf="currentQuestion.answerType === AnswerType.Multiple" type="checkbox" name="q_option" />
+
+                {{o.text}}
+            </label>
+        </div>
+    </div>
+</div>

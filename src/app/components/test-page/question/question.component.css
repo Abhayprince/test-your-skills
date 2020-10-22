@@ -1,0 +1,8 @@
+.option-label {
+  display: inline-block;
+  font-weight: normal;
+  padding: 5px;
+}
+.option-label:hover {
+  background-color: #e8e8e9;
+}

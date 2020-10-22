@@ -1,3 +1,5 @@
-<h2>Total time: {{displayTime}}</h2>
-<label>Time remaining: <span
-        [ngStyle]="{color: remainingSeconds <15 ? 'red': 'black', fontWeight: remainingSeconds <15 ? 'bold': 'normal'}">{{remainingDisplayTime}}</span></label>
+<div class="d-flex f-dir-col f-center m-r-15">
+        <h3>Total time: {{displayTime}}</h3>
+        <label class="m-y-10">Time remaining: <span
+                        [ngStyle]="{color: remainingSeconds <15 ? 'red': 'black', fontWeight: remainingSeconds <15 ? 'bold': 'normal'}">{{remainingDisplayTime}}</span></label>
+</div>
